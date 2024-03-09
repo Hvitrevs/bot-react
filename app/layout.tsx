@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import StarsCanvas from "./components/Stars";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} overflow-y-scroll-hidden overflow-x-hidden select-none  mx-auto tracking-[.1em] bg-[#f3f6f8] dark:bg-[#2d2f3e] text-[#373955] dark:text-[#cde3ff]`} >
+      <body className={`${inter.className} overflow-y-scroll-hidden overflow-x-hidden select-none  mx-auto tracking-[.1em] bg-[#d7c9ff] dark:bg-[#110828] text-[#474c92] dark:text-[#cde3ff]`} >
       <Providers>
+        <StarsCanvas />
         <Navbar />
           {children}
         

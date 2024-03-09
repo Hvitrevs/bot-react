@@ -11,7 +11,8 @@
   --background: #c2d2e5;
   --foreground: #292e52;
 
-  --gradient:linear-gradient(to bottom, #3e49e4, #c42ba3, #1dca17, #dabc29);
+  --gradient:linear-gradient(27deg, rgba(226,183,255,1) 0%, rgba(199,217,255,1) 50%, rgba(250,224,138,1) 100%);
+  --gradient1:linear-gradient(27deg, rgba(29,12,83,1) 0%, rgba(57,6,80,1) 50%, rgba(11,73,97,1) 100%);
 }
 
 body {
@@ -25,8 +26,11 @@ body {
   border-image: linear-gradient(to bottom, var(--border-color-from, #edb621), var(--border-color-to, #fc4524)) 3;
 }
 
-.backg-colors {
-  border: var(--gradient) 1;
+.back-light {
+  background-color: var(--gradient) 1;
+}
+.back-dark {
+  background-color: var(--gradient1) 1;
 }
 
 [data-theme='dark'] {
