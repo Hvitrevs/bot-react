@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  /* Your default theme */
+  --background: #c2d2e5;
+  --foreground: #292e52;
+
+  --gradient:linear-gradient(to bottom, #3e49e4, #c42ba3, #1dca17, #dabc29);
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.gradient-border {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-image: linear-gradient(to bottom, var(--border-color-from, #edb621), var(--border-color-to, #fc4524)) 3;
+}
+
+.backg-colors {
+  border: var(--gradient) 1;
+}
+
+[data-theme='dark'] {
+  --background: #1d213d;
+  --foreground: #c2d2e5;
+}
+
+
+.Welcome-text {
+  
+  font-weight: 700;
+}
+
+
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+
+}
