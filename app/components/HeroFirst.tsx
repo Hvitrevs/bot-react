@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Widgets from './Widgets';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Header from './Header';
+import Chatbot from './Chatbot';
 
 const HeroFirst = () => {
   return (
@@ -40,13 +41,7 @@ const HeroFirst = () => {
           </div>
           </div>
         <div className='xl:max-w-[250px] 2xl:max-w-[350px] xxs:invisible xl:visible xl:mt-40 2xl:mt-20 xl:ml-[10rem]'>
-        <Image
-            className="filter-grayscale opacity-[90%] dark:opacity-[90%]"
-            src="" 
-            alt="image"
-            height={350}
-            width={350}
-          />
+        <Chatbot />
         </div>
         </div>
     </>
