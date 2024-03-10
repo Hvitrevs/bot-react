@@ -7,6 +7,7 @@ import Widgets from './Widgets';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Header from './Header';
 import Chatbot from './Chatbot';
+import { QuestionAnswer } from '@mui/icons-material';
 
 const HeroFirst = () => {
   return (
@@ -38,6 +39,9 @@ const HeroFirst = () => {
             <p className=' md:text-[20px] xxs:text-[13px] tracking-[.05em] font-normal dark:text-[#bac8e6] xl:max-w-[550px]'>
             I am a contextual chatbot built with PyTorch. I can tell user a riddle or a joke upon request. I take a sentence and analyze it to find words that I know, and then generate answer. If I don't know something try to paraphrase your request. Have fun!
             </p>
+            <button className='mt-4 px-2 p-1.5 bg-transparent border-[1px] border-[#7b51c7] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#291f84] shadow-md shadow-[#9e51c7] hover:text-[#3aa4f0]'>
+              <QuestionAnswer /> Start 
+            </button>
           </div>
           </div>
         <div className='xl:max-w-[250px] 2xl:max-w-[350px] xl:mt-40 2xl:mt-20 xl:ml-[10rem] md:ml-[9rem] xs:ml-[2rem] xs:mt-[2rem]'>
