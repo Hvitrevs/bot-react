@@ -11,7 +11,7 @@ const Header = () => {
             
           </h2>
           <h4 className='font-semibold md:text-[25px] xxs:text-[15px] xxs:tracking-[.04em] sm:tracking-[.05em]'>
-            I am tell-a-joke bot
+            I tell jokes and riddles
           </h4>
     </>
 

@@ -19,12 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} overflow-y-scroll-hidden overflow-x-hidden select-none  mx-auto tracking-[.1em] bg-[#d7c9ff] dark:bg-[#110828] text-[#474c92] dark:text-[#cde3ff]`} >
+      <body className={`${inter.className} overflow-y-scroll-hidden overflow-x-hidden select-none  mx-auto tracking-[.1em] bg-gradient-to-b from-[#090417] via-[#120d36] to-[#090417] text-[#474c92] dark:text-[#cde3ff]`} >
       <Providers>
-        <StarsCanvas />
+      <StarsCanvas />
         <Navbar />
           {children}
-        
+          
       </Providers>
       </body>
     </html>

@@ -26,7 +26,7 @@ const Navbar = () => {
       
 
         <div className='flex items-center '>
-          <div className=' flex flex-row gap-2 items-center border-r-[2px] border-[#bec6cd] dark:border-[#36384e] pr-2'>
+          <div className=' flex flex-row gap-2 items-center  pr-2'>
             <Link 
               className='hover:text-pink-500 xxs:text-[18px] md:text-[25px]'  href='https://github.com/Hvitrevs'>
                 <FaGithub />
@@ -37,7 +37,7 @@ const Navbar = () => {
 
       <div className='flex items-center  py-1 xxs:visible'>
         <div className='md:p-[8px] xxs:p-[3px] xxs:text-[15px] md:text-[18px]  '>
-          <ThemeSwitch />
+        
         </div>
       </div>
     </div>
