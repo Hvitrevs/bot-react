@@ -15,7 +15,7 @@ const HeroFirst = () => {
       <div className='flex items-center flex-wrap'>
         <div className='xxs:mt-8 md:mt-[1rem] xxs:pr-4 xxs:pl-2 md:pl-20 2xl:pl-6 xl:pl-20 xs:ml-[2rem]  md:pb-1 flex flex-col gap-2 z-[50] max-w-[1050px] '>
           <Header />
-            <div className='md:h-6 md:mt-2 mb-7 flex md:gap-5 justify-start text-start  xs:gap-[3px] xs:h-4  xs:mt-2 xxs:mt-2 xxs:h-4 xxs:gap-[2px] '>
+            <div className='md:h-6 md:mt-2 mb-4  flex md:gap-5 justify-start text-start  xs:gap-[3px] xs:h-4  xs:mt-2 xxs:mt-2 xxs:h-4 xxs:gap-[2px] '>
               <Widgets 
                   title={'Next.js'} 
                   icon={<SparklesIcon />} 
@@ -33,14 +33,14 @@ const HeroFirst = () => {
                   icon={<SparklesIcon />} 
               />
             </div>   
-          <div className='mt-[10px] rounded-lg md:pr-5 py-1 bg-none'>
-            <div className='flex gap-2 mb-2 flex md:gap-5 justify-start text-start'>
+          <div className='mt-[5px] rounded-lg md:pr-5 bg-none'>
+            <div className='flex gap-2 mb-1 flex md:gap-5 justify-start text-start'>
             </div>
-            <p className=' md:text-[20px] xxs:text-[13px] tracking-[.05em] font-normal dark:text-[#bac8e6] xl:max-w-[550px]'>
+            <p className=' md:text-[20px] mb-4 xxs:text-[13px] tracking-[.08em] font-normal dark:text-[#bac8e6] xl:max-w-[550px]'>
             I am a contextual chatbot built with PyTorch. I can tell user a riddle or a joke upon request. I take a sentence and analyze it to find words that I know, and then generate answer. If I don't know something try to paraphrase your request. Have fun!
             </p>
-            <button className='mt-4 px-2 p-1.5 bg-transparent border-[1px] border-[#7b51c7] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#291f84] shadow-md shadow-[#9e51c7] hover:text-[#3aa4f0]'>
-              <QuestionAnswer /> Start 
+            <button className='mt-4 px-2 p-1.5 bg-transparent border-[1px] border-[#7b51c7] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#240f4b] shadow-md shadow-[#9e51c7] hover:text-[#99d4ff]'>
+              <QuestionAnswer /> Try 
             </button>
           </div>
           </div>
