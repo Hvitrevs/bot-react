@@ -1,12 +1,49 @@
 import { NearMe } from '@mui/icons-material'
 import { Button } from '@mui/material'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react';
 
-const Chatbot = () => {
+interface Message {
+  name: string;
+  message: string;
+}
+
+const Chatbot: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [text, setText] = useState('');
+
+  const toggleChatBox = () => setIsOpen(!isOpen);
+
+  const sendMessage = async () => {
+    if (!text.trim()) return;
+
+    const userMessage: Message = { name: "User", message: text };
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+    //sending the message to the backend
+    try {
+      const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+      const data = await response.json();
+      const botMessage: Message = { name: "Orpheus", message: data.answer };
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    } catch (error) {
+      console.error('Sending message failed:', error);
+    }
+
+    // Reset input field
+    setText('');
+  };
   return (
     <div className='w-[450px] shadow-xl flex'>
-      <div className='bg-[#0a0627]/05 backdrop-blur-[3px] z-20 border-[3px] shadow-lg shadow-[#153259] border-[#060d34] rounded-xl  xxs:w-[250px]  xs:w-[350px] md:w-[450px] md:h-[550px] xs:h-[25rem] flex flex-col'>
+      <div  className='bg-[#0a0627]/05 backdrop-blur-[3px] z-20 border-[3px] shadow-lg shadow-[#153259] border-[#060d34] rounded-xl  xxs:w-[250px]  xs:w-[350px] md:w-[450px] md:h-[550px] xs:h-[25rem] flex flex-col'>
         <div className='h-[6rem] w-full bg-[#060122] flex flex-col px-4 py-2 rounded-xl '>
           <span className='flex md:text-[13px] xs:text-[12px] xxs:text-[10px] font-thin ml-[4.5rem]'>
             Chat support
@@ -27,10 +64,13 @@ const Chatbot = () => {
             </span>
           </div>
         </div>
-        <div className='flex bg-none h-full flex-col z-[30]'>
-            <div className='text-white ml-2'>
-              hm
+        <div id='chatbox__messages' className='flex bg-none h-full flex-col z-[30]'>
+          {messages.map((msg, index) => (
+            <div key={index} id='message' className='text-white ml-2'>
+              {msg.name} : {msg.message}
             </div>
+          ))}
+
         </div> 
 
         <div className=' flex bg-[#060122] flex flex-col px-4 py-4 rounded-xl '>
@@ -43,8 +83,4 @@ const Chatbot = () => {
     </div>
   )
 }
-
 export default Chatbot
-
-
-
