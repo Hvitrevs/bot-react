@@ -70,12 +70,11 @@ const Chatbot: React.FC = () => {
               {msg.name} : {msg.message}
             </div>
           ))}
-
         </div> 
 
         <div className=' flex bg-[#060122] flex flex-col px-4 py-4 rounded-xl '>
-          <input className='w-full bg-[#160f41]  rounded-xl p-2 px-4' type='text' placeholder='Start a conversation ...' />
-          <button className='mt-2 p-1 bg-transparent border-[1px] border-[#241a63] text-[#195c72] font-semibold rounded-2xl hover:bg-[#1f0f45] hover:text-[#3aa4f0]'><NearMe /> </button>
+          <input className='w-full bg-[#160f41]  rounded-xl p-2 px-4' type='text' value={text} onChange={(e) => setText(e.target.value)} placeholder='Start a conversation ...' />
+          <button id='chatbox__send--footer send__button' onClick={sendMessage} className='mt-2 p-1 bg-transparent border-[1px] border-[#241a63] text-[#195c72] font-semibold rounded-2xl hover:bg-[#1f0f45] hover:text-[#3aa4f0]'><NearMe /> </button>
         </div>
       
       </div>
