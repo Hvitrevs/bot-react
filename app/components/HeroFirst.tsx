@@ -10,6 +10,8 @@ import Chatbot from './Chatbot';
 import { QuestionAnswer } from '@mui/icons-material';
 
 const HeroFirst = () => {
+
+  
   return (
     <>
       <div className='flex items-center flex-wrap'>
@@ -39,11 +41,7 @@ const HeroFirst = () => {
             <p className=' md:text-[20px] mb-4 xxs:text-[13px] tracking-[.08em] font-normal dark:text-[#bac8e6] xl:max-w-[550px]'>
             I am a contextual chatbot built with PyTorch. I can tell user a riddle or a joke upon request. I take a sentence and analyze it to find words that I know, and then generate answer. If I don't know something try to paraphrase your request. Have fun!
             </p>
-            <div className='flex items-end'>
-            <button className=' mt-4 px-2 p-1.5 bg-transparent border-[1px] border-[#3c197c] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#240f4b] shadow-md shadow-[#642984] hover:text-[#99d4ff]'>
-              <QuestionAnswer /> Chat 
-            </button>
-            </div>
+
 
           </div>
           </div>
