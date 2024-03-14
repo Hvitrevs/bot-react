@@ -6,7 +6,7 @@ import React from 'react'
 const Chatbot = () => {
   return (
     <div className='w-[450px] shadow-xl flex'>
-      <div className='bg-[#0a0627]/05 backdrop-blur-[3px] z-20 border-[3px] shadow-lg shadow-[#1f1652] border-[#120b39] rounded-xl  xxs:w-[250px] xs:w-[350px] md:w-[450px] md:h-[550px] xs:h-[25rem] flex flex-col'>
+      <div className='bg-[#0a0627]/05 backdrop-blur-[3px] z-20 border-[3px] shadow-lg shadow-[#153259] border-[#060d34] rounded-xl  xxs:w-[250px]  xs:w-[350px] md:w-[450px] md:h-[550px] xs:h-[25rem] flex flex-col'>
         <div className='h-[6rem] w-full bg-[#060122] flex flex-col px-4 py-2 rounded-xl '>
           <span className='flex md:text-[13px] xs:text-[12px] xxs:text-[10px] font-thin ml-[4.5rem]'>
             Chat support
@@ -29,13 +29,13 @@ const Chatbot = () => {
         </div>
         <div className='flex bg-none h-full flex-col z-[30]'>
             <div className='text-white ml-2'>
-              
+              hm
             </div>
         </div> 
 
         <div className=' flex bg-[#060122] flex flex-col px-4 py-4 rounded-xl '>
           <input className='w-full bg-[#160f41]  rounded-xl p-2 px-4' type='text' placeholder='Start a conversation ...' />
-          <button className='mt-2 p-1 bg-transparent border-[1px] border-[#241a63] text-[#2c5dd6] font-semibold rounded-2xl hover:bg-[#291f84] hover:text-[#3aa4f0]'><NearMe /> </button>
+          <button className='mt-2 p-1 bg-transparent border-[1px] border-[#241a63] text-[#195c72] font-semibold rounded-2xl hover:bg-[#1f0f45] hover:text-[#3aa4f0]'><NearMe /> </button>
         </div>
       
       </div>
@@ -45,3 +45,6 @@ const Chatbot = () => {
 }
 
 export default Chatbot
+
+
+
