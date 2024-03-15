@@ -26,10 +26,10 @@ const config: Config = {
       keyframes: {
         bounce: {
           '0%, 100%': {
-            transform: 'translateY(-8%)',
+            transform: 'translateY(8%)',
           },
           '50%': {
-            transform: 'translateY(1%)',
+            transform: 'translateY(-8%)',
           },
         },
       },

@@ -62,18 +62,26 @@ const Chatbot: React.FC = () => {
   }, [messages]);
 
   return (
-    <div className='bottom-7 fixed right-7 shadow-xl flex'>
-      <div className={`flex flex-col bg-[#635aa7]/5 backdrop-blur-[3px] z-20 border-[3px] shadow-lg shadow-[#1f1652] border-[#120b39] xxs:w-[250px] xs:w-[350px] md:w-[450px] md:h-[550px] xs:h-[25rem] rounded-xl transition-opacity duration-500 ease-in-out transform translate-y-0 opacity-100 z-50 ${isOpen ? '' : 'hidden'}`}>
+    <div className='bottom-7 md:fixed md:mt-20 right-7 z-[123456] shadow-xl flex'>
+      <div className={`xs:ml-3 xxs:ml-2 flex flex-col bg-[#635aa7]/5 backdrop-blur-[5px] z-20 border-[3px] shadow-lg shadow-[#1f1652] border-[#120b39] xxs:w-[350px] xs:w-[350px] md:w-[450px] md:h-[650px] xs:h-[25rem] rounded-xl transition-opacity duration-500 ease-in-out transform translate-y-0 opacity-100 z-50 ${isOpen ? '' : 'hidden'}`}>
         <div className="sticky top-0 bg-[#060122] flex items-center justify-center p-4 rounded-t-lg shadow">
-          <Image src="/avatar.png" alt="Chat Support" width={45} height={45} className="rounded-full border-2 border-green-500" />
+          <div className='flex flex-wrap'>
+          <Image src="/avatar.png" alt="Chat Support" width={45} height={45} className="rounded-full border-2 border-green-500 mb-1 mt-3" />
+          <p className='text-[9px] mt-[6px] ml-[6px]  font-thin'>
+              Online
+          </p>
+          </div>
+
           <div className="text-white ml-4">
-            <h4 className="text-xs mb-1 text-[#7971a6]">Chat Support</h4>
-            <p className="text-md mb-2 text-[#e4dfff]">Hi I am Orpheus. How can I help you?</p>
+            
+            <h4 className="mb-1 text-[#d8d2f8] md:text-[13px] xs:text-[12px] xxs:text-[10px] font-thin">Chat Support</h4>
+            <p className="text-md mb-2 text-[#e4dfff] font-normal md:text-[16px] xs:text-[14px] xxs:text-[12px]">Hi I am Orpheus. How can I help you?</p>
+
           </div>
         </div>
         <div className="flex-1 overflow-y-auto flex flex-col p-5">
           {messages.map((msg, index) => (
-            <div key={index} className={`p-2 my-2 rounded-lg max-w-max ${msg.name === 'User' ? 'bg-[#7648c0] ml-auto' : 'bg-[#1a8490]'}`}>
+            <div key={index} className={`p-2 my-2 rounded-lg max-w-max ${msg.name === 'User' ? 'bg-[#113779] ml-auto w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[12px]' : 'bg-[#007261] w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[10px]'}`}>
               <span className="text-white text-sm">{msg.message}</span>
             </div>
           ))}
@@ -92,11 +100,14 @@ const Chatbot: React.FC = () => {
           </button>
         </div>
       </div>
-      {isButtonVisible && ( 
-        <button onClick={toggleChatBox} className='ml-4 p-1.5 bg-transparent border-[1px] border-[#3c197c] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#240f4b] shadow-md shadow-[#642984] hover:text-[#99d4ff]'>
+      <div className='flex items-end justify-end'>
+        {isButtonVisible && ( 
+        <button onClick={toggleChatBox} className='ml-4 xs:ml-2 p-1.5 bg-transparent border-[1px] border-[#3c197c] text-[#8489e4] font-semibold rounded-2xl hover:bg-[#240f4b] shadow-md shadow-[#642984] hover:text-[#99d4ff]  md:text-[13px] xs:text-[12px] xxs:text-[10px]'>
           <QuestionAnswer /> Chat 
         </button>
       )}
+      </div>
+
     </div>
   );
 };
