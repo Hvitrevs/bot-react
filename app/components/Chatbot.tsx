@@ -50,7 +50,7 @@ const Chatbot: React.FC = () => {
       } catch (error) {
         console.error('Sending message failed:', error);
       }
-    }, 2000); // 2 second delay
+    }, 1000); // 1 second delay
   };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);

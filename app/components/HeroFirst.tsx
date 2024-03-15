@@ -16,7 +16,7 @@ const HeroFirst = () => {
   return (
     <>
       <div className='flex items-center flex-wrap'>
-        <div className='xxs:mt-20 md:mt-[1rem] xxs:pr-4 xxs:pl-2 md:pl-20 2xl:pl-6 xl:pl-20 xs:ml-[2rem]  md:pb-1 flex flex-col gap-2 z-[50] max-w-[1050px] '>
+        <div className='xxs:mt-5 md:mt-[1rem] xxs:pr-4 xxs:pl-2 md:pl-20 2xl:pl-6 xl:pl-20 xs:ml-[2rem]  md:pb-1 flex flex-col gap-2 z-[50] max-w-[1050px] '>
           <Header />
             <div className='md:h-6 md:mt-2 mb-4  flex md:gap-5 justify-start text-start  xs:gap-[3px] xs:h-4  xs:mt-2 xxs:mt-2 xxs:h-4 xxs:gap-[2px] '>
               <Widgets 
