@@ -8,7 +8,7 @@ import StarsCanvas from "./components/Stars";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Chatbot",
+  title: "Orpheus Chatbot",
   description: "Friendly chatbot with jokes and riddles",
 };
 

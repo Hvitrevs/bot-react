@@ -94,6 +94,7 @@ const Chatbot: React.FC = () => {
             placeholder='Start a conversation ...'
             value={text}
             onChange={(e) => setText(e.target.value)}
+            
           />
           <button onClick={sendMessage} className=" p-2 rounded-full border-[1px] border-[#3a28a2] text-[#5476fe] shadow-lg">
             <NearMe />
