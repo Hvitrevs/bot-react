@@ -1,5 +1,4 @@
 
-
 import { NearMe, QuestionAnswer } from '@mui/icons-material';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
@@ -14,6 +13,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const toggleChatBox = () => {
     setIsOpen(!isOpen);
@@ -48,6 +48,9 @@ const Chatbot: React.FC = () => {
         const botMessage: Message = { name: "Orpheus", message: data.answer };
         setMessages((prevMessages) => [...prevMessages.filter(msg => msg.message !== "Typing..."), botMessage]);
       } catch (error) {
+        const errorMessage: Message = { name: "Orpheus", message: "⚠️ The bot is offline, please contact the administrator ⚠️" };
+        setMessages((prevMessages) => [...prevMessages.filter(msg => msg.message !== "Typing..."), errorMessage]);
+        setErrorMessage(errorMessage.message); // Set error message
         console.error('Sending message failed:', error);
       }
     }, 1000); // 1 second delay
@@ -67,8 +70,8 @@ const Chatbot: React.FC = () => {
         <div className="sticky top-0 bg-[#060122] flex items-center justify-center p-4 rounded-t-lg shadow">
           <div className='flex flex-wrap'>
           <Image src="/avatar.png" alt="Chat Support" width={45} height={45} className="rounded-full border-2 border-green-500 mb-1 mt-3" />
-          <p className='text-[9px] mt-[6px] ml-[6px]  font-thin'>
-              Online
+          <p className={`text-[9px] mt-[6px] ml-[6px]  font-normal ${errorMessage ? 'text-red-500' : 'text-green-500'}`}>
+              {errorMessage ? 'Offline' : 'Online'}
           </p>
           </div>
 
@@ -80,12 +83,15 @@ const Chatbot: React.FC = () => {
           </div>
         </div>
         <div className="flex-1 overflow-y-auto flex flex-col p-5">
-          {messages.map((msg, index) => (
-            <div key={index} className={`p-2 my-2 rounded-lg max-w-max ${msg.name === 'User' ? 'bg-[#113779] ml-auto w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[12px]' : 'bg-[#007261] w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[10px]'}`}>
-              <span className="text-white text-sm">{msg.message}</span>
-            </div>
-          ))}
-          <div ref={messagesEndRef} />
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`p-2 my-2 rounded-lg max-w-max ${msg.name === 'User' ? 'bg-[#113779] ml-auto w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[12px]' : (errorMessage ? 'bg-[#6d1d31]/50 w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[10px]' : 'bg-[#007261] w-4/5 md:text-[16px] xs:text-[14px] xxs:text-[10px]')}`}
+          >
+        <span className="text-white text-sm">{msg.message}</span>
+        </div>
+        ))}
+        <div ref={messagesEndRef} />
         </div>
         <div className="sticky bottom-0 flex items-center justify-between p-4 bg-[#060122] rounded-b-lg">
           <input
